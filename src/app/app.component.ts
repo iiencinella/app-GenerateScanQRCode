@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, VERSION, ViewChild } from '@angular/core';
+import { NgxQrcodeElementTypes, NgxQrcodeErrorCorrectionLevels } from '@techiediaries/ngx-qrcode';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app-GenerateScanQRCode';
+
+  //Generating QR Code
+
+  elementTypeG = NgxQrcodeElementTypes.URL;
+  correctionLevelG = NgxQrcodeErrorCorrectionLevels.HIGH;
+  valueG = 'Hola Mundo!';
+
+  //Reading QR Code
+  scanSuccessHandle(e: any) {
+    console.log(e);
+  }
 }
